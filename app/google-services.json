@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "959632138562",
+    "firebase_url": "https://mineelite-5dc78-default-rtdb.firebaseio.com",
+    "project_id": "mineelite-5dc78",
+    "storage_bucket": "mineelite-5dc78.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:959632138562:android:cb222c11bd611158afa8db",
+        "android_client_info": {
+          "package_name": "com.devil.tanji"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-ZnRGNFEw1kx9VsjqrTsKNpXbZgRj6cw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:959632138562:android:8778b9cbbd2bf872afa8db",
+        "android_client_info": {
+          "package_name": "com.devil.tanji.crypto"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-ZnRGNFEw1kx9VsjqrTsKNpXbZgRj6cw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
