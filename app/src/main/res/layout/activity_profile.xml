@@ -122,7 +122,7 @@
 
                     <TextView
                         android:id="@+id/miningText"
-                        android:text="@string/inactive"
+                        android:text="@string/loading"
                         android:textSize="22sp"
                         android:textColor="#42A5F5"
                         android:textStyle="bold"
@@ -189,6 +189,18 @@
 
         </LinearLayout>
     </ScrollView>
+
+    <ImageButton
+        android:id="@+id/logoutButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_logout"
+        android:contentDescription="@string/logout" />
+
 
     <!-- Bottom Navigation - fixed at bottom -->
     <include

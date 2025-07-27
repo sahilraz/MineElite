@@ -2,6 +2,7 @@ package com.devil.tanji;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +11,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class ProfileActivity extends AppCompatActivity {
     private TextView emailText, phoneText, coinText, streakText, miningText, rewardText;
+    private ImageButton logoutButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,9 +24,15 @@ public class ProfileActivity extends AppCompatActivity {
         streakText = findViewById(R.id.streakText);
         miningText = findViewById(R.id.miningText);
         rewardText = findViewById(R.id.rewardText);
+        logoutButton = findViewById(R.id.logoutButton);
 
         loadProfile();
         setupBottomNav();
+        logoutButton.setOnClickListener(v -> {
+            FirebaseAuth.getInstance().signOut();
+            startActivity(new Intent(this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
+            finish();
+        });
     }
 
     private void loadProfile() {

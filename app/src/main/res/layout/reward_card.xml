@@ -63,11 +63,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Claim"
-            android:background="@drawable/green_button_bg"
+            android:background="@drawable/reward_button_bg"
             android:textColor="#FFFFFF"
             android:padding="8dp"
             android:visibility="gone"
-            android:layout_marginTop="8dp"/>
+            android:layout_marginTop="8dp"
+            android:paddingHorizontal="10dp"/>
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

@@ -1,14 +1,20 @@
 package com.devil.tanji;
 
+import android.content.ClipboardManager;
+import android.content.ClipData;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ImageView;
+import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.devil.tanji.utils.UserManager;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class ReferEarnActivity extends AppCompatActivity {
 
@@ -28,8 +34,8 @@ public class ReferEarnActivity extends AppCompatActivity {
         findViewById(R.id.copyButton).setOnClickListener(v -> {
             String code = referCode.getText().toString();
             if (!code.isEmpty()) {
-                android.content.ClipboardManager clipboard = (android.content.ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
-                android.content.ClipData clip = android.content.ClipData.newPlainText("Referral Code", code);
+                ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+                ClipData clip = ClipData.newPlainText("Referral Code", code);
                 clipboard.setPrimaryClip(clip);
                 Toast.makeText(ReferEarnActivity.this, "Referral code copied!", Toast.LENGTH_SHORT).show();
             } else {
@@ -40,25 +46,33 @@ public class ReferEarnActivity extends AppCompatActivity {
 
     private void loadRefer() {
         UserManager.getInstance().init(user -> {
-            if (user == null) {
+            if (user == null || user.referCode == null || user.referCode.isEmpty()) {
                 Toast.makeText(ReferEarnActivity.this, "Failed to load refer data", Toast.LENGTH_SHORT).show();
                 return;
             }
 
-            referCode.setText(String.valueOf(user.referCode));
+            String referCodeStr = user.referCode.trim().toUpperCase();
+            referCode.setText(referCodeStr);
 
-            // Count users who used this refer code
             FirebaseDatabase.getInstance().getReference("users")
                     .orderByChild("usedReferCode")
-                    .equalTo(user.referCode)
-                    .get()
-                    .addOnSuccessListener(snapshot -> {
-                        long count = snapshot.getChildrenCount();
-                        referCount.setText(String.valueOf(count));
+                    .equalTo(referCodeStr)
+                    .addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot snapshot) {
+                            long count = snapshot.getChildrenCount();
+                            referCount.setText(String.valueOf(count));
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError error) {
+                            Toast.makeText(ReferEarnActivity.this, "Failed to fetch refer count", Toast.LENGTH_SHORT).show();
+                            referCount.setText("0");
+                            Log.e("ReferEarnActivity", "Firebase error: " + error.getMessage());
+                        }
                     });
         });
     }
-
 
     private void setupBottomNav() {
         int active = getResources().getColor(R.color.nav_active);
@@ -83,6 +97,5 @@ public class ReferEarnActivity extends AppCompatActivity {
         findViewById(R.id.navStreak).setOnClickListener(v -> startActivity(new Intent(this, StreakRewardActivity.class)));
         findViewById(R.id.navWithdraw).setOnClickListener(v -> startActivity(new Intent(this, WithdrawalActivity.class)));
         findViewById(R.id.navProfile).setOnClickListener(v -> startActivity(new Intent(this, ProfileActivity.class)));
-        // Refer & Earn tab is already active, no action needed
     }
-} 
+}

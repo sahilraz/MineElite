@@ -43,12 +43,12 @@
 
                 <!-- Close Button on Right -->
                 <ImageButton
-                    android:id="@+id/closeButton"
+                    android:id="@+id/telegramButton"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:background="@android:color/transparent"
+                    android:background="?attr/selectableItemBackgroundBorderless"
                     android:src="@drawable/ic_close"
-                    android:contentDescription="@string/close" />
+                    android:contentDescription="@string/telegram" />
             </LinearLayout>
 
             <!-- Status -->
@@ -56,8 +56,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:orientation="horizontal"
-                android:layout_below="@id/coinText">
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -123,6 +122,28 @@
                     android:textColor="@android:color/holo_orange_light" />
             </LinearLayout>
 
+            <!-- Reward Claimed Text -->
+            <TextView
+                android:id="@+id/rewardClaimedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="john@example.com claimed ₹1000!"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:gravity="center"
+                android:shadowColor="#80000000"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"
+                android:alpha="0"
+                android:translationY="-20dp"
+                android:paddingHorizontal="24dp"
+                android:paddingVertical="12dp"
+                android:background="@drawable/bg_reward_claimed"
+                />
 
             <!-- Timer Circle with Spacing -->
             <LinearLayout
@@ -130,8 +151,8 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
-                android:layout_marginTop="80dp"
-                android:layout_marginBottom="80dp">
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="40dp">
 
                 <TextView
                     android:id="@+id/timerText"
@@ -139,10 +160,26 @@
                     android:layout_height="200dp"
                     android:background="@drawable/timer_circle"
                     android:gravity="center"
-                    android:text="00:00:00"
+                    android:text="Loading..."
                     android:textSize="20sp"
                     android:textColor="@android:color/white" />
             </LinearLayout>
+
+            <!-- Hyperlink TextView -->
+            <TextView
+                android:id="@+id/hyperlinkText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HOW TO START?"
+                android:textColor="@android:color/holo_blue_light"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="20dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:autoLink="web" />
 
             <!-- Start Button -->
             <Button
@@ -150,21 +187,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/start"
-                android:layout_below="@id/timerText"
                 android:layout_marginTop="16dp"
-                android:backgroundTint="@color/pink"
-                android:textColor="@android:color/white" />
+                android:background="@drawable/bg_rounded_button"
+                android:textColor="@android:color/white"
+                android:elevation="4dp"
+                android:paddingVertical="12dp"
+                android:paddingHorizontal="16dp"
+                android:textAllCaps="false"
+                />
+
             <!-- Extend Button -->
             <Button
                 android:id="@+id/extendButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/extend_time"
-                android:layout_below="@id/startButton"
                 android:layout_marginTop="8dp"
-                android:backgroundTint="@color/purple_500"
+                android:background="@drawable/bg_rounded_extend_button"
                 android:textColor="@android:color/white"
-                android:enabled="false" />
+                android:enabled="false"
+                android:elevation="4dp"
+                android:paddingVertical="12dp"
+                android:paddingHorizontal="16dp"
+                android:textAllCaps="false" />
+
         </LinearLayout>
     </ScrollView>
 

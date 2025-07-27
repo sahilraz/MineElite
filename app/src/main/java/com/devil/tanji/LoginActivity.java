@@ -23,6 +23,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText emailEditText, passwordEditText;
     private Button signInButton;
     private TextView goToRegisterText;
+    private TextView forgotPasswordText;
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
 
@@ -79,8 +80,13 @@ public class LoginActivity extends AppCompatActivity {
         passwordEditText = findViewById(R.id.passwordEditText);
         signInButton = findViewById(R.id.signInButton);
         goToRegisterText = findViewById(R.id.goToRegisterText);
+        forgotPasswordText = findViewById(R.id.forgotPasswordText);
 
         signInButton.setOnClickListener(v -> loginUser());
+
+        forgotPasswordText.setOnClickListener(v -> {
+            startActivity(new Intent(LoginActivity.this, ResetPasswordActivity.class));
+        });
 
         goToRegisterText.setOnClickListener(v -> {
             startActivity(new Intent(LoginActivity.this, RegisterActivity.class));

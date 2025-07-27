@@ -11,12 +11,16 @@ public class AdminModel {
 
     public String verifyBaseUrl = "";
 
+    public String baseApiUrl = "";
+    public String hyperLink = "";
+    public String tgUrl = "";
+
     public AdminModel() {
         // Required for Firebase
     }
 
     public AdminModel(String email, String password, int cpm, int extend_duration,
-                            int mining_duration, int reminder_notification, boolean notifications, String verifyBaseUrl) {
+                            int mining_duration, int reminder_notification, boolean notifications, String verifyBaseUrl, String baseApiUrl, String tgUrl) {
         this.email = email;
         this.password = password;
         this.cpm = cpm;
@@ -25,5 +29,7 @@ public class AdminModel {
         this.reminder_notification = reminder_notification;
         this.notifications = notifications;
         this.verifyBaseUrl = verifyBaseUrl;
+        this.baseApiUrl = baseApiUrl;
+        this.tgUrl = tgUrl;
     }
 }

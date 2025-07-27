@@ -108,7 +108,7 @@
                     android:id="@+id/totalReferralsText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/_1"
+                    android:text="@string/loading"
                     android:textColor="#FFD700"
                     android:textSize="22sp"
                     android:textStyle="bold"

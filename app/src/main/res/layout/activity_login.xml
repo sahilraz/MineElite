@@ -67,7 +67,19 @@
                 android:padding="12dp"
                 android:textColor="@android:color/black"
                 android:textColorHint="@color/hint_color"
-                android:layout_marginBottom="24dp" />
+                android:layout_marginBottom="8dp" />
+
+            <!-- ✅ Forgot Password TextView -->
+            <TextView
+                android:id="@+id/forgotPasswordText"
+                android:text="@string/forgot_password"
+                android:textColor="@color/purple_500"
+                android:textStyle="bold"
+                android:gravity="end"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="sans-serif-medium" />
 
             <Button
                 android:id="@+id/signInButton"

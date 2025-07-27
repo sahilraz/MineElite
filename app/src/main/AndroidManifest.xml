@@ -42,6 +42,7 @@
         <activity android:name=".WithdrawalActivity" android:exported="false" />
         <activity android:name=".ReferEarnActivity" android:exported="false" />
         <activity android:name=".ProfileActivity" android:exported="false" />
+        <activity android:name=".ResetPasswordActivity" />
         <!-- <activity android:name=".PrivacyPolicyActivity" android:exported="false" /> -->
 
         <!-- Firebase Messaging Service -->
@@ -53,5 +54,9 @@
             </intent-filter>
         </service>
 
+        <!-- Mining Alarm Receiver -->
+        <receiver
+            android:name=".receiver.MiningAlarmReceiver"
+            android:exported="true" />
     </application>
 </manifest>
