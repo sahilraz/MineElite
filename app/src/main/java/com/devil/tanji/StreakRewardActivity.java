@@ -38,7 +38,7 @@ import java.util.Iterator;
 public class StreakRewardActivity extends AppCompatActivity {
 
     private GridLayout cardInsertionArea;
-    private TextView loadingText, streakCount;
+    private TextView loadingText, streakCount, exchangeRateText;
 
 
     @Override
@@ -49,6 +49,7 @@ public class StreakRewardActivity extends AppCompatActivity {
         cardInsertionArea = findViewById(R.id.cardInsertionArea);
         loadingText = findViewById(R.id.loadingText);
         streakCount = findViewById(R.id.streakCount);
+        exchangeRateText = findViewById(R.id.exchangeRateText);
 
         setupBottomNav();
         loadRewardsFromFirebase();
@@ -81,6 +82,7 @@ public class StreakRewardActivity extends AppCompatActivity {
                 }
 
                 String apiUrl = admin.baseApiUrl + "/rewards?uid=" + user.uid;
+                exchangeRateText.setText("1$ = ₹" + admin.dollar);
 
                 new Thread(() -> {
                     try {
