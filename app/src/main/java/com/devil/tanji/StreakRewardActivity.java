@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Gravity;
 import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -183,6 +184,7 @@ public class StreakRewardActivity extends AppCompatActivity {
             int remaining = streakRequired - userStreak;
             rewardButton.setText("Need " + remaining + " more");
             rewardButton.setEnabled(false);
+            rewardButton.setGravity(Gravity.CENTER);
             rewardButton.setBackground(ContextCompat.getDrawable(cardView.getContext(), R.drawable.bg_need_more_button));
             rewardMoreText.setVisibility(View.GONE);
         }

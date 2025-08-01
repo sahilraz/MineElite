@@ -15,13 +15,15 @@ public class AdminModel {
     public String visit = "";
     public String tgUrl = "";
     public int dollar = 0;
+    public  String mail ="";
+    public String term;
 
     public AdminModel() {
         // Required for Firebase
     }
 
     public AdminModel(String email, String password, int cpm, int extend_duration,
-                            int mining_duration, int reminder_notification, boolean notifications, String verifyBaseUrl, String baseApiUrl, String tgUrl, String visit, int dollar) {
+                            int mining_duration, int reminder_notification, boolean notifications, String verifyBaseUrl, String baseApiUrl, String tgUrl, String visit, int dollar, String mail, String term) {
         this.email = email;
         this.password = password;
         this.cpm = cpm;
@@ -34,5 +36,7 @@ public class AdminModel {
         this.tgUrl = tgUrl;
         this.visit = visit;
         this.dollar = dollar;
+        this.mail = mail;
+        this.term = term;
     }
 }

@@ -298,7 +298,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private String generateMaskedEmail() {
-        String[] names = {"raj", "amit", "neha", "sara", "john", "alex", "mona", "vivek", "anil", "ravi"};
+        String[] names = {"raj", "amit", "neha", "sara", "john", "alex", "mona", "vivek", "anil", "ravi", "suraj", "sahil", "vaibhav", "devil", "toxic", "tanji", "satish", "freefire", "garena", "victoria"};
         String name = names[random.nextInt(names.length)];
         String domains[] = {"gmail.com", "mail.com", "outlook.com", "hotmail.com"};
         String domain = domains[random.nextInt(domains.length)];

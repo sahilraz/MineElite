@@ -58,4 +58,6 @@
     <string name="hyper_text">HOW TO START ??</string>
     <string name="logout">Logout</string>
     <string name="telegram">Telegram</string>
+    <string name="contact_support">Contact Support</string>
+    <string name="useravatar">UserAvatar</string>
 </resources>

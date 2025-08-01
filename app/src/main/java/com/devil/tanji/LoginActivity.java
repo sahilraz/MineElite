@@ -107,17 +107,40 @@ public class LoginActivity extends AppCompatActivity {
         signInButton.setEnabled(false);
 
         mAuth.signInWithEmailAndPassword(email, password)
-            .addOnCompleteListener(this, task -> {
-                if (task.isSuccessful()) {
-                    FirebaseUser user = mAuth.getCurrentUser();
-                    if (user != null) {
-                        checkAndUpdateFcmToken(user.getUid());
+                .addOnCompleteListener(this, task -> {
+                    if (task.isSuccessful()) {
+                        FirebaseUser user = mAuth.getCurrentUser();
+                        if (user != null) {
+                            // Check if user is banned
+                            mDatabase.child("users").child(user.getUid()).child("isBanned")
+                                    .get().addOnCompleteListener(banCheck -> {
+                                        if (banCheck.isSuccessful()) {
+                                            Long isBanned = banCheck.getResult().getValue(Long.class);
+                                            if (isBanned != null && isBanned == 1) {
+                                                Toast.makeText(this, "You are banned from using this app", Toast.LENGTH_LONG).show();
+                                                FirebaseAuth.getInstance().signOut();
+                                                signInButton.setText(R.string.login);
+                                                signInButton.setEnabled(true);
+                                            } else {
+                                                // Proceed if not banned
+                                                checkAndUpdateFcmToken(user.getUid());
+                                            }
+                                        } else {
+                                            Toast.makeText(this, "Failed to verify ban status", Toast.LENGTH_SHORT).show();
+                                            FirebaseAuth.getInstance().signOut();
+                                            signInButton.setText(R.string.login);
+                                            signInButton.setEnabled(true);
+                                        }
+                                    });
+                        }
+                    } else {
+                        Toast.makeText(this, "Authentication failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        signInButton.setText(R.string.login);
+                        signInButton.setEnabled(true);
                     }
-                } else {
-                    Toast.makeText(this, "Authentication failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                }
-            });
+                });
     }
+
 
     private void checkAndUpdateFcmToken(String uid) {
         FirebaseMessaging.getInstance().getToken()

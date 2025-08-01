@@ -62,14 +62,12 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
         // Create the channel for Android O+
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            NotificationChannel channel = new NotificationChannel(
-                    CHANNEL_ID,
-                    "General Notifications",
-                    NotificationManager.IMPORTANCE_HIGH
-            );
-            notificationManager.createNotificationChannel(channel);
-        }
+        NotificationChannel channel = new NotificationChannel(
+                CHANNEL_ID,
+                "General Notifications",
+                NotificationManager.IMPORTANCE_HIGH
+        );
+        notificationManager.createNotificationChannel(channel);
 
         notificationManager.notify((int) System.currentTimeMillis(), notificationBuilder.build());
     }

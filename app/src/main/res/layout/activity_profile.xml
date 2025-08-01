@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_gradient">
@@ -26,6 +27,7 @@
                 android:layout_width="96dp"
                 android:layout_height="96dp"
                 android:layout_marginTop="24dp"
+                android:contentDescription="@string/useravatar"
                 android:src="@drawable/ic_user_avatar_vector"
                 android:background="@drawable/avatar_circle_bg"
                 android:padding="16dp" />
@@ -182,17 +184,108 @@
                 android:textStyle="bold"
                 android:layout_marginTop="24dp" />
 
-            <!-- Mining History Placeholder -->
-            <TextView
-                android:id="@+id/miningHistoryPlaceholder"
+            <!-- Stylish Mining History Section -->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/no_mining_history_yet"
-                android:background="@drawable/stat_card_bg"
-                android:textColor="#B0BEC5"
-                android:padding="16dp"
                 android:layout_marginTop="8dp"
-                android:gravity="center" />
+                android:orientation="vertical"
+                android:background="@drawable/stat_card_bg">
+
+                <!-- History Container with dynamic height up to a max -->
+                <ScrollView
+                    android:id="@+id/miningHistoryScroll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxHeight="200dp"
+                    android:scrollbars="vertical"
+                    android:overScrollMode="never">
+
+                    <LinearLayout
+                        android:id="@+id/miningHistoryContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <!-- Placeholder text -->
+                        <TextView
+                            android:id="@+id/miningHistoryPlaceholder"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/no_mining_history_yet"
+                            android:textColor="#B0BEC5"
+                            android:textSize="14sp"
+                            android:gravity="center"
+                            android:padding="16dp" />
+                    </LinearLayout>
+                </ScrollView>
+            </LinearLayout>
+
+            <!-- Terms and Conditions Accordion -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/stat_card_bg"
+                android:padding="8dp">
+
+                <!-- Accordion toggle -->
+                <TextView
+                    android:id="@+id/termsToggleTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="▼ Terms &amp; Conditions"
+                    android:textColor="#42A5F5"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:padding="8dp"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <!-- Hidden content -->
+                <TextView
+                    android:id="@+id/termsContentTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/loading"
+                    android:textColor="#B0BEC5"
+                    android:textSize="14sp"
+                    android:visibility="gone"
+                    android:paddingTop="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/emailAdminButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:background="@drawable/bg_button_ripple"
+                android:padding="12dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="32dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_mail"
+                    android:layout_marginEnd="8dp"
+                    app:tint="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/contact_support"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+
 
         </LinearLayout>
     </ScrollView>
