@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    namespace = "com.devil.tanji"
+    namespace = "com.cryptos.mining"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.devil.tanji"
-        minSdk = 29
+        applicationId = "com.cryptos.mining"
+        minSdk = 24
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"

@@ -8,28 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:959632138562:android:cb222c11bd611158afa8db",
+        "mobilesdk_app_id": "1:959632138562:android:cf976d6d5ab893efafa8db",
         "android_client_info": {
-          "package_name": "com.devil.tanji"
-        }
-      },
-      "oauth_client": [],
-      "api_key": [
-        {
-          "current_key": "AIzaSyD-ZnRGNFEw1kx9VsjqrTsKNpXbZgRj6cw"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": []
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:959632138562:android:8778b9cbbd2bf872afa8db",
-        "android_client_info": {
-          "package_name": "com.devil.tanji.crypto"
+          "package_name": "com.cryptos.mining"
         }
       },
       "oauth_client": [],

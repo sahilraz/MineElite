@@ -211,13 +211,15 @@
                         <!-- Placeholder text -->
                         <TextView
                             android:id="@+id/miningHistoryPlaceholder"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/no_mining_history_yet"
-                            android:textColor="#B0BEC5"
+                            android:textColor="@android:color/darker_gray"
                             android:textSize="14sp"
                             android:gravity="center"
-                            android:padding="16dp" />
+                            android:layout_marginTop="1dp"
+                            android:layout_gravity="center_horizontal" />
+
                     </LinearLayout>
                 </ScrollView>
             </LinearLayout>
@@ -297,7 +299,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_margin="16dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:background="@android:color/transparent"
         android:src="@drawable/ic_logout"
         android:contentDescription="@string/logout" />
