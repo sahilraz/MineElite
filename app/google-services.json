@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "793060181168",
+    "firebase_url": "https://mine-elite2-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "mine-elite2",
+    "storage_bucket": "mine-elite2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:793060181168:android:d3bc8977f7e6c229d8a775",
+        "android_client_info": {
+          "package_name": "crypto.mining.elite"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDU38akfybGJuenJSJgmG-nhwt9lgdGrAk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

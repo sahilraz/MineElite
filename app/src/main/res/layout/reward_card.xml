@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    card_view:cardCornerRadius="16dp"
+    card_view:cardElevation="6dp"
+    android:layout_marginBottom="16dp"
+    android:layout_marginHorizontal="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="center_horizontal"
+        android:background="@drawable/reward_card_bg">
+
+        <ImageView
+            android:id="@+id/rewardImage"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginBottom="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_default_reward" />
+
+        <TextView
+            android:id="@+id/rewardTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Silver Badge"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="4dp" />
+
+        <TextView
+            android:id="@+id/rewardDays"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="15 days streak"
+            android:textSize="14sp"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="4dp" />
+
+        <TextView
+            android:id="@+id/rewardMoreText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Need 10 more"
+            android:background="@drawable/red_button_bg"
+            android:textColor="@android:color/white"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="6dp"
+            android:textSize="13sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="4dp"
+            android:gravity="center"
+            android:backgroundTint="@color/red" />
+
+        <TextView
+            android:id="@+id/rewardButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Claim"
+            android:background="@drawable/reward_button_bg"
+            android:textColor="#FFFFFF"
+            android:paddingVertical="10dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:visibility="gone"
+            android:layout_marginTop="8dp"
+
+            android:singleLine="true"
+            android:maxLines="1"
+            android:ellipsize="none"
+            android:gravity="center"
+
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="8sp"
+            android:autoSizeMaxTextSize="14sp"
+            android:autoSizeStepGranularity="1sp" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

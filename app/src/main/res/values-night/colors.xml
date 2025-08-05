@@ -1,0 +1,3 @@
+<resources>
+    <color name="hint_color">#CCCCCC</color> <!-- Lighter gray for dark mode -->
+</resources>

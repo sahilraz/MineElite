@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient">
+
+    <!-- Scrollable content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottomNav"
+        android:padding="16dp"
+        android:layout_marginTop="10dp"
+        android:scrollbars="none"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <!-- User Avatar -->
+            <ImageView
+                android:id="@+id/userAvatar"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:layout_marginTop="24dp"
+                android:contentDescription="@string/useravatar"
+                android:src="@drawable/ic_user_avatar_vector"
+                android:background="@drawable/avatar_circle_bg"
+                android:padding="16dp" />
+
+            <!-- User Info -->
+            <TextView
+                android:id="@+id/emailText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/demo_email"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:layout_marginTop="12dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/phoneText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/loading"
+                android:textColor="#B0BEC5"
+                android:textSize="14sp" />
+
+            <!-- Stats Grid -->
+            <GridLayout
+                android:id="@+id/statsGrid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:layout_marginTop="24dp"
+                android:rowCount="2"
+                android:useDefaultMargins="true">
+
+                <!-- Total Coins -->
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:background="@drawable/stat_card_bg"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/coinText"
+                        android:text="@string/_0"
+                        android:textSize="22sp"
+                        android:textColor="#42A5F5"
+                        android:textStyle="bold"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_width="wrap_content" />
+
+                    <TextView
+                        android:text="@string/total_coins"
+                        android:textColor="#90A4AE"
+                        android:textSize="14sp"
+                        android:layout_height="40dp"
+                        android:layout_width="wrap_content" />
+                </LinearLayout>
+
+                <!-- Current Streak -->
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:background="@drawable/stat_card_bg"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/streakText"
+                        android:text="@string/_0"
+                        android:textSize="22sp"
+                        android:textColor="#42A5F5"
+                        android:textStyle="bold"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_width="wrap_content" />
+
+                    <TextView
+                        android:text="@string/current_streak"
+                        android:textColor="#90A4AE"
+                        android:textSize="14sp"
+                        android:layout_height="40dp"
+                        android:layout_width="wrap_content" />
+                </LinearLayout>
+
+                <!-- Mining Status -->
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:background="@drawable/stat_card_bg"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/miningText"
+                        android:text="@string/loading"
+                        android:textSize="22sp"
+                        android:textColor="#42A5F5"
+                        android:textStyle="bold"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_width="wrap_content" />
+
+                    <TextView
+                        android:text="@string/mining_status"
+                        android:textColor="#90A4AE"
+                        android:textSize="14sp"
+                        android:layout_height="40dp"
+                        android:layout_width="wrap_content" />
+                </LinearLayout>
+
+                <!-- Rewards -->
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:background="@drawable/stat_card_bg"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/rewardText"
+                        android:text="@string/_0"
+                        android:textSize="22sp"
+                        android:textColor="#42A5F5"
+                        android:textStyle="bold"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_width="wrap_content" />
+
+                    <TextView
+                        android:text="@string/rewards_claimed"
+                        android:textColor="#90A4AE"
+                        android:textSize="14sp"
+                        android:layout_height="40dp"
+                        android:layout_width="wrap_content" />
+                </LinearLayout>
+            </GridLayout>
+
+            <!-- Recent History Title -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/recent_mining_history"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="24dp" />
+
+            <!-- Stylish Mining History Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical"
+                android:background="@drawable/stat_card_bg">
+
+                <!-- Placeholder text -->
+                <TextView
+                    android:id="@+id/miningHistoryPlaceholder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/no_mining_history_yet"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="-10dp"
+                    android:layout_gravity="center_horizontal" />
+
+                <!-- History Container with dynamic height up to a max -->
+                <ScrollView
+                    android:id="@+id/miningHistoryScroll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxHeight="200dp"
+                    android:scrollbars="vertical"
+                    android:overScrollMode="never">
+
+                    <LinearLayout
+                        android:id="@+id/miningHistoryContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                    </LinearLayout>
+                </ScrollView>
+            </LinearLayout>
+
+            <!-- Terms and Conditions Accordion -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/stat_card_bg"
+                android:padding="8dp">
+
+                <!-- Accordion toggle -->
+                <TextView
+                    android:id="@+id/termsToggleTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="▼ Terms &amp; Conditions"
+                    android:textColor="#42A5F5"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:padding="8dp"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <!-- Hidden content -->
+                <TextView
+                    android:id="@+id/termsContentTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/loading"
+                    android:textColor="#B0BEC5"
+                    android:textSize="14sp"
+                    android:visibility="gone"
+                    android:paddingTop="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/emailAdminButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:background="@drawable/bg_button_ripple"
+                android:padding="12dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="32dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_mail"
+                    android:layout_marginEnd="8dp"
+                    app:tint="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/contact_support"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageButton
+        android:id="@+id/logoutButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_logout"
+        android:contentDescription="@string/logout" />
+
+
+    <!-- Bottom Navigation - fixed at bottom -->
+    <include
+        android:id="@+id/bottomNav"
+        layout="@layout/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+</RelativeLayout>

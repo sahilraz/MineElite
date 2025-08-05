@@ -1,0 +1,16 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="240"
+    android:viewportHeight="240">
+
+    <!-- Outer blue circle -->
+    <path
+        android:fillColor="#0088cc"
+        android:pathData="M120,0C53.73,0 0,53.73 0,120s53.73,120 120,120 120,-53.73 120,-120S186.27,0 120,0z" />
+
+    <!-- Inner white paper plane (Telegram logo) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M176.93,84.08l-21.88,103.14c-1.65,7.48 -6.02,9.33 -12.19,5.82l-33.65,-24.82 -16.22,15.62c-1.79,1.79 -3.29,3.29 -6.74,3.29l2.41,-34.13 62.12,-56.02c2.7,-2.41 -0.58,-3.76 -4.2,-1.35l-76.7,48.25 -33.06,-10.33c-7.18,-2.24 -7.33,-7.18 1.5,-10.61l129.23,-49.86c5.99,-2.24 11.23,1.35 9.3,10.01z" />
+</vector>
